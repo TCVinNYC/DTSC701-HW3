@@ -1,11 +1,11 @@
 # Upload script to cluster
-scp -i /Users/prince/Desktop/SSH\ Key\ pair1.pem /Users/prince/development/DTSC701-HW2/word_count.py hadoop@ec2-18-117-229-55.us-east-2.compute.amazonaws.com:/home/hadoop
+scp -i /Users/prince/Desktop/SSH\ Key\ pair1.pem /Users/prince/development/DTSC701-HW3/pyspark_word_count.py hadoop@ec2-18-220-146-28.us-east-2.compute.amazonaws.com:/home/hadoop
 
 # SSH into cluster
-ssh -i /Users/prince/Desktop/SSH\ Key\ pair1.pem hadoop@ec2-18-117-229-55.us-east-2.compute.amazonaws.com
+ssh -i /Users/prince/Desktop/SSH\ Key\ pair1.pem hadoop@ec2-18-220-146-28.us-east-2.compute.amazonaws.com
 
 # Install requirements
 pip install mrjob boto3
 
 # Run python script in cluster
-python word_count.py -r emr s3://awsbucket1-stevensonch/bios.txt --output-dir=s3://awsbucket1-stevensonch/bios_output.txt
+spark-submit pyspark_word_count.py
