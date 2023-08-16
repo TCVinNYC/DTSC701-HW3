@@ -23,6 +23,6 @@ def word_count(input_file, output_dir):
 
 if __name__ == "__main__":
     input_file = 's3://awsbucket1-stevensonch/bios.txt'  # Replace with your input file path
-    output_dir = 's3://awsbucket1-stevensonch/bios_output.txt'  # Replace with your desired output directory
+    output_dir = 's3://awsbucket1-stevensonch/bios_output'  # Replace with your desired output directory
 
     word_count(input_file, output_dir)
